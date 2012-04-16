@@ -1,5 +1,8 @@
 package com.kwc.itfornebulunchapp;
 
+import com.kwc.itfornebulunchapp.model.DayMenu;
+import com.kwc.itfornebulunchapp.model.WeekMenu;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,7 +21,8 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class LunsjDecoder {
-    public static HashMap<String,String> getLunsj() {
+    public static WeekMenu getLunsj() {
+        WeekMenu theWeekMenu = new WeekMenu();
         String url = "http://leietaker.itfornebu.no/itfornebu/kantinemeny";
         String line, s1 = "", s2 ="";
         StringBuilder content = new StringBuilder();
@@ -44,11 +48,17 @@ public class LunsjDecoder {
         Pattern patt = Pattern.compile(expr);
         Matcher matt = patt.matcher(content.toString());
         while (matt.find()) {
-            // put items into menu
-            menu.put(matt.group(1).toLowerCase(), matt.group(2));
+            // put unsorted items into menu
+            menu.put(matt.group(1).toLowerCase().trim(), matt.group(2));
         }
-        //return menu.get(dayOfTheWeek());
-        return menu;
+
+        theWeekMenu.setMonday(new DayMenu("Monday",menu.get("mandag")));
+        theWeekMenu.setTuesday(new DayMenu("Tuesday", menu.get("tirsdag")));
+        theWeekMenu.setWednesday(new DayMenu("Wednesday", menu.get("onsdag")));
+        theWeekMenu.setThursday(new DayMenu("Thursday", menu.get("torsdag")));
+        theWeekMenu.setFriday(new DayMenu("Friday", menu.get("fredag")));
+
+        return theWeekMenu;
     }
 
     /**
@@ -57,7 +67,7 @@ public class LunsjDecoder {
      * norwegian date
      * @return
      */
-    private static String dayOfTheWeek() {
+    private static HashMap<Integer, String> dayOfTheWeek() {
         Calendar cal = new GregorianCalendar();
         HashMap<Integer,String> m = new HashMap<Integer, String>();
         m.put(2,"mandag");
@@ -68,6 +78,6 @@ public class LunsjDecoder {
         m.put(7,"lørdag");
         m.put(1,"søndag");
         int day = cal.get(Calendar.DAY_OF_WEEK);
-        return m.get(day);
+        return m;
     }
 }

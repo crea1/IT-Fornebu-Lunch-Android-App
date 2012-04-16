@@ -19,9 +19,9 @@ public class LunsjActivity extends Activity
         webView = (WebView)findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         //webView.loadUrl("file:///android_asset/www/index.html");
-        //HTMLAssembler htmlAssembler = new HTMLAssembler(LunsjDecoder.getLunsj());
-        String html = "<html><body><h3>"+LunsjDecoder.getLunsj()+"<h3></body></html>";
-        //String html = htmlAssembler.getTheMenu();
+        HTMLAssembler htmlAssembler = new HTMLAssembler(LunsjDecoder.getLunsj());
+        //String html = "<html><body><h3>"+LunsjDecoder.getLunsj()+"<h3></body></html>";
+        String html = htmlAssembler.getTheMenu();
         System.out.println(html);
         webView.loadData(html, mimetype, encoding);
 
