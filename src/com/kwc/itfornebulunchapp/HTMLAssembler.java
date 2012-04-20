@@ -3,6 +3,12 @@ package com.kwc.itfornebulunchapp;
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.HashMap;
 
 /**
@@ -14,7 +20,10 @@ import java.util.HashMap;
  */
 public class HTMLAssembler {
     private StringBuilder theMenu = new StringBuilder();
-    public HTMLAssembler(WeekMenu weekMenu) {
+    private int dayOfWeek = 0;
+
+    public HTMLAssembler(WeekMenu weekMenu,int dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
         theMenu.append(header());
 
         theMenu.append("<h3>The Menu</h3>");
@@ -35,15 +44,31 @@ public class HTMLAssembler {
         StringBuilder page = new StringBuilder();
         page.append("<!DOCTYPE html>");
         page.append("<html><head><title>IT Fornebu Lunsj</title>");
-        page.append("<link href=\"/assets/www/lunsj.css\" rel=\"stylesheet\" type=\"text/css\" />");
+        page.append("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />");
+        page.append("<link href=\"lunsj.css\" rel=\"stylesheet\" type=\"text/css\" />");
         page.append("</head>");
         page.append("<body>");
+
+
+            File f = new File("lunsj.css");
+
+
+            //URL u = getClass().getProtectionDomain().getCodeSource().getLocation();
+            //page.append(u);
+
+
         page.append("<div id=\"container\">");
         return page.toString();
     }
     private String aDish(DayMenu dayMenu) {
-        return  "<h4>"+dayMenu.getWeekday()+"</h4>" +
-                "<span class=\"dish\">"+dayMenu.getDish()+"</span></p>";
+        String dayHeader =  "<h4>"+dayMenu.getWeekday()+"</h4>";
+        String dayDish = "<span class=\"dish\">"+dayMenu.getDish()+"</span>";
+        if (dayMenu.getDayOfWeek() == dayOfWeek) {
+            dayHeader =  "<h4 style=\"background-color: #FF69B4\">"+dayMenu.getWeekday()+"</h4>";
+        }
+
+        return  dayHeader + dayDish;
+
     }
 
     private String footer() {

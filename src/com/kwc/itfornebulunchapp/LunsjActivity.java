@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;
 
+import java.io.IOException;
+
+
 public class LunsjActivity extends Activity    
 {
     final String mimetype = "text/html";
@@ -18,12 +21,16 @@ public class LunsjActivity extends Activity
         
         webView = (WebView)findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
-        //webView.loadUrl("file:///android_asset/www/index.html");
-        HTMLAssembler htmlAssembler = new HTMLAssembler(LunsjDecoder.getLunsj());
-        //String html = "<html><body><h3>"+LunsjDecoder.getLunsj()+"<h3></body></html>";
+
+
+        HTMLAssembler htmlAssembler = new HTMLAssembler(LunsjDecoder.getLunsj(), DateHandler.getWeekDayByNumber());
+
         String html = htmlAssembler.getTheMenu();
-        System.out.println(html);
+
         webView.loadData(html, mimetype, encoding);
 
     }
+
+
+
 }

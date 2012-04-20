@@ -52,32 +52,15 @@ public class LunsjDecoder {
             menu.put(matt.group(1).toLowerCase().trim(), matt.group(2));
         }
 
-        theWeekMenu.setMonday(new DayMenu("Monday",menu.get("mandag")));
-        theWeekMenu.setTuesday(new DayMenu("Tuesday", menu.get("tirsdag")));
-        theWeekMenu.setWednesday(new DayMenu("Wednesday", menu.get("onsdag")));
-        theWeekMenu.setThursday(new DayMenu("Thursday", menu.get("torsdag")));
-        theWeekMenu.setFriday(new DayMenu("Friday", menu.get("fredag")));
+        // Sort list and put it in a menu
+        theWeekMenu.setMonday(new DayMenu("Monday",menu.get("mandag"),2));
+        theWeekMenu.setTuesday(new DayMenu("Tuesday", menu.get("tirsdag"),3));
+        theWeekMenu.setWednesday(new DayMenu("Wednesday", menu.get("onsdag"),4));
+        theWeekMenu.setThursday(new DayMenu("Thursday", menu.get("torsdag"),5));
+        theWeekMenu.setFriday(new DayMenu("Friday", menu.get("fredag"),6));
 
         return theWeekMenu;
     }
 
-    /**
-     * dayOfTheWeek
-     * This method finds todays weekday and translates it to the corresponding
-     * norwegian date
-     * @return
-     */
-    private static HashMap<Integer, String> dayOfTheWeek() {
-        Calendar cal = new GregorianCalendar();
-        HashMap<Integer,String> m = new HashMap<Integer, String>();
-        m.put(2,"mandag");
-        m.put(3,"tirsdag");
-        m.put(4,"onsdag");
-        m.put(5,"torsdag");
-        m.put(6,"fredag");
-        m.put(7,"lørdag");
-        m.put(1,"søndag");
-        int day = cal.get(Calendar.DAY_OF_WEEK);
-        return m;
-    }
+
 }
