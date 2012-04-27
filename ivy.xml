@@ -1,0 +1,6 @@
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="IT-Fornebu-Lunch-Android-App"/>
+    <dependency org="com.googlecode.json-simple" name="json-simple" rev="1.1.1" >
+        <artifact name="json-simple" type="bundle" />
+    </dependency>
+</ivy-module>

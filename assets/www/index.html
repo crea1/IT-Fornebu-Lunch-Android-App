@@ -6,5 +6,30 @@
 </head>
 <body>
     Lunsj.. body :D
+
+    <!-- http://www.learn-ajax-tutorial.com/Json.cfm -->
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" import="java.net.*,org.json.simple.*"%>
+    <%
+    try
+    {
+    URLDecoder decoder = new URLDecoder();
+    String strJSON = decoder.decode(request.getParameter("strJSON"));
+    JSONObject objJSON = (JSONObject) JSONValue.parse(strJSON);
+
+    String Message = objJSON.get("msg").toString();
+    if (Message.equals("Hi There!"))
+    {
+    out.write("And hi there to you!");
+    }
+    else
+    {
+    out.write("Later Gator!");
+    }
+    }
+    catch (Exception e)
+    {
+    out.write(e.toString());
+    }
+    %>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.kwc.itfornebulunchapp;
 
 import android.app.Activity;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.webkit.WebView;
 
@@ -21,6 +22,7 @@ public class LunsjActivity extends Activity
         
         webView = (WebView)findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
+
 
 
         HTMLAssembler htmlAssembler = new HTMLAssembler(LunsjDecoder.getLunsj(), DateHandler.getWeekDayByNumber());
