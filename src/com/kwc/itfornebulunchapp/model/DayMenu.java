@@ -1,49 +1,60 @@
 package com.kwc.itfornebulunchapp.model;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Crea
- * Date: 16.04.12
- * Time: 22:04
- * To change this template use File | Settings | File Templates.
+ * DayMenu is an object holding the dish
+ * for a single day.
+ * @since 1.0
+ * @author Marius Kristensen
  */
+
 public class DayMenu {
-    int dayOfWeek;
-    String weekday;
-    String dish;
+    /**
+     * Weekday Number. Monday = 1, Tuesday = 2 etc.
+     */
+    private int dayOfWeek;
 
     /**
-     * Constructor
+     * The Weekday in String.
+     */
+    private String weekday;
+
+    /**
+     * The dish that is served.
+     */
+    private String dish;
+
+    /**
+     * Constructor.
      * @param weekday - Name of day in String
      * @param dish What dish is served on this day
-     * @param dayOfWeek Weekday number (i.e 1=monday, 2=tuesday)
+     * @param dayOfWeek Weekday number (i.e 2=monday, 3=tuesday)
      */
-    public DayMenu(String weekday, String dish,int dayOfWeek) {
+    public DayMenu(final String weekday, final String dish, final int dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
         this.weekday = weekday;
         this.dish = dish;
     }
 
-    public void setdayOfWeek(int dayOfWeek) {
+    public final void setDayOfWeek(final int dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }
-    public int getDayOfWeek() {
+    public final int getDayOfWeek() {
         return dayOfWeek;
     }
 
-    public String getWeekday() {
+    public final String getWeekday() {
         return weekday;
     }
 
-    public void setWeekday(String weekday) {
+    public final void setWeekday(final String weekday) {
         this.weekday = weekday;
     }
 
-    public String getDish() {
+    public final String getDish() {
         return dish;
     }
 
-    public void setDish(String dish) {
+    public final void setDish(final String dish) {
         this.dish = dish;
     }
 }

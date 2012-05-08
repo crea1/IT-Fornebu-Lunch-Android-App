@@ -4,18 +4,25 @@ import android.webkit.WebView;
 import com.kwc.itfornebulunchapp.LunsjDecoder;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Crea
- * Date: 02.05.12
- * Time: 19:03
- * To change this template use File | Settings | File Templates.
+ * JSInteface.
+ * This handles the function calls between the javascript
+ * in the html and the java.
+ * @since 1.0
+ * @author Marius Kristensen
  */
+
 public class JSInterface {
 
+    /**
+     * WebView.
+     */
     private WebView webView;
 
-    public JSInterface(WebView webView)
-    {
+    /**
+     * Constructor.
+     * @param webView input WebView
+     */
+    public JSInterface(final WebView webView) {
         this.webView = webView;
     }
 
@@ -29,7 +36,7 @@ public class JSInterface {
     /**
      * Calls a javascript function that updates the html.
      */
-    public void callUpdate() {
+   public void callUpdate() {
         webView.loadUrl("javascript:updateThis()");
     }
 
@@ -38,6 +45,6 @@ public class JSInterface {
      * @return JSON Object in String format.
      */
     public String loadMenu() {
-        return LunsjDecoder.JSONWeekMenu();
+        return LunsjDecoder.jsonWeekMenuFormatter();
     }
 }

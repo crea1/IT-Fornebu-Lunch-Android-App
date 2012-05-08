@@ -1,11 +1,9 @@
 package com.kwc.itfornebulunchapp.model;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Crea
- * Date: 16.04.12
- * Time: 21:57
- * To change this template use File | Settings | File Templates.
+ * WeekMeny holds all the weeks dishes.
+ * @since 1.0
+ * @author Marius Kristensen
  */
 public class WeekMenu {
     private DayMenu monday;
@@ -16,59 +14,59 @@ public class WeekMenu {
     private DayMenu saturday;
     private DayMenu sunday;
 
-    public DayMenu getMonday() {
+    public final DayMenu getMonday() {
         return monday;
     }
 
-    public void setMonday(DayMenu monday) {
+    public final void setMonday(final DayMenu monday) {
         this.monday = monday;
     }
 
-    public DayMenu getTuesday() {
+    public final DayMenu getTuesday() {
         return tuesday;
     }
 
-    public void setTuesday(DayMenu tuesday) {
+    public final void setTuesday(final DayMenu tuesday) {
         this.tuesday = tuesday;
     }
 
-    public DayMenu getWednesday() {
+    public final DayMenu getWednesday() {
         return wednesday;
     }
 
-    public void setWednesday(DayMenu wednesday) {
+    public final void setWednesday(final DayMenu wednesday) {
         this.wednesday = wednesday;
     }
 
-    public DayMenu getThursday() {
+    public final DayMenu getThursday() {
         return thursday;
     }
 
-    public void setThursday(DayMenu thursday) {
+    public final void setThursday(final DayMenu thursday) {
         this.thursday = thursday;
     }
 
-    public DayMenu getFriday() {
+    public final DayMenu getFriday() {
         return friday;
     }
 
-    public void setFriday(DayMenu friday) {
+    public final void setFriday(final DayMenu friday) {
         this.friday = friday;
     }
 
-    public DayMenu getSaturday() {
+    public final DayMenu getSaturday() {
         return saturday;
     }
 
-    public void setSaturday(DayMenu saturday) {
+    public final void setSaturday(final DayMenu saturday) {
         this.saturday = saturday;
     }
 
-    public DayMenu getSunday() {
+    public final DayMenu getSunday() {
         return sunday;
     }
 
-    public void setSunday(DayMenu sunday) {
+    public final void setSunday(final DayMenu sunday) {
         this.sunday = sunday;
     }
 }

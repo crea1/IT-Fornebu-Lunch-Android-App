@@ -5,12 +5,11 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Crea
- * Date: 20.04.12
- * Time: 18:55
- * To change this template use File | Settings | File Templates.
+ * DateHandler.
+ * @since 1.0
+ * @author Marius Kristensen
  */
+
 public class DateHandler {
 
     public static int getWeekDayByNumber() {
