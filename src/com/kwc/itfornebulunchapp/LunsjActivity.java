@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import com.kwc.itfornebulunchapp.jsaccessors.JSInterface;
+import com.kwc.itfornebulunchapp.utils.AlertBox;
 
 
 //http://code.google.com/p/myandroidwidgets/source/browse/#svn%2Ftrunk%2FJQueryExample
@@ -20,6 +21,7 @@ public class LunsjActivity extends Activity {
 
     private WebView webView = null;
     private static final String LOG_TAG = "ITFORNEBU-LUNCH";
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class LunsjActivity extends Activity {
 
         webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/index.html");
 
@@ -35,6 +38,10 @@ public class LunsjActivity extends Activity {
         JSInterface jsInterface = new JSInterface(webView);
         webView.addJavascriptInterface(jsInterface, "jsinterface");
 
+        AlertBox alertBox = new AlertBox(LunsjActivity.this);
+
     }
+
+
 }
 

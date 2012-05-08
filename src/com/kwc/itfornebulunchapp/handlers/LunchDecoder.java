@@ -1,6 +1,8 @@
 package com.kwc.itfornebulunchapp.handlers;
 
+import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
+import com.kwc.itfornebulunchapp.utils.AlertBox;
 
 /**
  * LunchDecoder.
@@ -26,6 +28,7 @@ public final class LunchDecoder {
             return DataSorter.sortLunchData(content);
         } else {
             //todo add some error handling here.
+            System.out.println("********************************");
             return null;
         }
     }
