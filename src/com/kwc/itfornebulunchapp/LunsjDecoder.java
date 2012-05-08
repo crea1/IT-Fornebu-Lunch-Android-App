@@ -2,6 +2,7 @@ package com.kwc.itfornebulunchapp;
 
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
+import org.json.simple.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +22,8 @@ import java.util.regex.Pattern;
  * To change this template use File | Settings | File Templates.
  */
 public class LunsjDecoder {
-    public static WeekMenu getLunsj() {
+
+    private static WeekMenu getLunsj() {
         WeekMenu theWeekMenu = new WeekMenu();
         String url = "http://leietaker.itfornebu.no/itfornebu/kantinemeny";
         String line, s1 = "", s2 ="";
@@ -60,6 +62,23 @@ public class LunsjDecoder {
         theWeekMenu.setFriday(new DayMenu("Friday", menu.get("fredag"),6));
 
         return theWeekMenu;
+    }
+
+    /**
+     * Formats the internal java menu-object to a Json-object.
+     * @return JSON-formatted string.
+     */
+    public static String JSONWeekMenu() {
+        WeekMenu menu = getLunsj();
+        String s =
+        "{"
+        + "\"Monday\":\""+menu.getMonday().getDish()+"\","
+        + "\"Tuesday\":\""+menu.getTuesday().getDish()+"\","
+        + "\"Wednesday\":\""+menu.getWednesday().getDish()+"\","
+        + "\"Thursday\":\""+menu.getThursday().getDish()+"\","
+        + "\"Friday\":\""+menu.getFriday().getDish()+"\""
+        + "}";
+        return s;
     }
 
 

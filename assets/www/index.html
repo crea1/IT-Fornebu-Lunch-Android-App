@@ -1,35 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <script src="jquery-1.7.2.min.js"></script>
+    <link href="lunsj.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="JavaScript">
+        var json = '';
+        /**
+         * This method retrieves the json object from the jsinterface
+         */
+        function getJSONMenu() {
+            json = jsinterface.loadMenu();
+
+            callUpdate();
+
+        }
+        /**
+         * This method parses the json object and updates the html
+         */
+        function updateThis() {
+            try {
+                var meny = JSON.parse(json);
+            } catch(e) {
+                alert(e.toString());
+            }
+            // Use jQuery to populate menu
+            $('div.monday').replaceWith('<h2>' + meny.Monday+ '</h2>');
+            $('div.tuesday').replaceWith('<h2>' + meny.Tuesday+ '</h2>');
+            $('div.wednesday').replaceWith('<h2>' + meny.Wednesday+ '</h2>');
+            $('div.thursday').replaceWith('<h2>' + meny.Thursday+ '</h2>');
+            $('div.friday').replaceWith('<h2>' + meny.Friday+ '</h2>');
+        }
+        function callJson(){
+            window.jsinterface.callJson();
+        }
+        function callUpdate(){
+            window.jsinterface.callUpdate();
+        }
+    </script>
 </head>
 <body>
-    Lunsj.. body :D
 
-    <!-- http://www.learn-ajax-tutorial.com/Json.cfm -->
-    <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" import="java.net.*,org.json.simple.*"%>
-    <%
-    try
-    {
-    URLDecoder decoder = new URLDecoder();
-    String strJSON = decoder.decode(request.getParameter("strJSON"));
-    JSONObject objJSON = (JSONObject) JSONValue.parse(strJSON);
-
-    String Message = objJSON.get("msg").toString();
-    if (Message.equals("Hi There!"))
-    {
-    out.write("And hi there to you!");
-    }
-    else
-    {
-    out.write("Later Gator!");
-    }
-    }
-    catch (Exception e)
-    {
-    out.write(e.toString());
-    }
-    %>
+<div class="header">
+    This is a header
+</div>
+<div class="body">
+    <div class="monday">.</div>
+    <div class="tuesday">.</div>
+    <div class="wednesday">.</div>
+    <div class="thursday">.</div>
+    <div class="friday">.</div>
+</div>
+<div class="controls">
+    <input type="button" value="JSON" id="json" onclick="callJson()" />
+</div>
 </body>
 </html>
+
