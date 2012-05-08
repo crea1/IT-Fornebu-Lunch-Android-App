@@ -1,7 +1,7 @@
 package com.kwc.itfornebulunchapp.jsaccessors;
 
 import android.webkit.WebView;
-import com.kwc.itfornebulunchapp.LunsjDecoder;
+import com.kwc.itfornebulunchapp.handlers.LunchDecoder;
 
 /**
  * JSInteface.
@@ -45,6 +45,6 @@ public class JSInterface {
      * @return JSON Object in String format.
      */
     public String loadMenu() {
-        return LunsjDecoder.jsonWeekMenuFormatter();
+        return LunchDecoder.jsonWeekMenuFormatter();
     }
 }
