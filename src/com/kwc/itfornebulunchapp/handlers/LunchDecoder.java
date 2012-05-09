@@ -28,7 +28,6 @@ public final class LunchDecoder {
             return DataSorter.sortLunchData(content);
         } else {
             //todo add some error handling here.
-            System.out.println("********************************");
             return null;
         }
     }

@@ -2,82 +2,42 @@
 <html>
 <head>
     <script src="jquery-1.7.2.min.js"></script>
+    <script src="lunch.js"></script>
     <link href="lunsj.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" language="JavaScript">
-        var json = '';
-        /**
-         * This method retrieves the json object from the jsinterface
-         */
-        function getJSONMenu() {
-            json = jsinterface.loadMenu();
-
-            callUpdate();
-
-        }
-        /**
-         * This method parses the json object and updates the html
-         */
-        function updateThis() {
-            try {
-                var meny = JSON.parse(json);
-            } catch(e) {
-                alert(e.toString());
-            }
-            // Use jQuery to populate menu
-            $('div.monday').replaceWith('<div class="monday dish">' + meny.Monday+ '</div>');
-            $('div.tuesday').replaceWith('<div class="tuesday dish">' + meny.Tuesday+ '</div>');
-            $('div.wednesday').replaceWith('<div class="wednesday dish">' + meny.Wednesday+ '</div>');
-            $('div.thursday').replaceWith('<div class="thursday dish">' + meny.Thursday+ '</div>');
-            $('div.friday').replaceWith('<div class="friday dish">' + meny.Friday+ '</div>');
-
-            $('div').removeClass('hidden');
-            $('div#spinner').addClass('hidden');
-        }
-        function callJson(){
-            window.jsinterface.callJson();
-        }
-        function callUpdate(){
-            window.jsinterface.callUpdate();
-        }
-
-        $(document).ready(function() {
-            callJson();
-        });
-    </script>
 </head>
 <body>
 
 <div id="header">
-    IT Fornebu lunch menu
+    IT Fornebu Lunsjmeny
 </div>
 <div class="body">
     <div id="spinner">
         <img src="spinner.gif" />
     </div>
-    <div class="day hidden">
-        Monday
-        <div class="monday hidden"></div>
-    </div>
-    <div class="day hidden">
-        Tuesday
-        <div class="tuesday hidden"></div>
-    </div>
-    <div class="day hidden">
-        Wednesday
-        <div class="wednesday hidden"></div>
-    </div>
-    <div class="day hidden">
-        Thursday
-        <div class="thursday hidden"></div>
-    </div>
-    <div class="day hidden">
-        Friday
-        <div class="friday hidden"></div>
+    <div id="menu" class="hidden">
+        <div class="day">
+            Mandag
+            <div class="monday"></div>
+        </div>
+        <div class="day">
+            Tirsdag
+            <div class="tuesday"></div>
+        </div>
+        <div class="day">
+            Onsdag
+            <div class="wednesday"></div>
+        </div>
+        <div class="day">
+            Torsdag
+            <div class="thursday"></div>
+        </div>
+        <div class="day">
+            Fredag
+            <div class="friday"></div>
+        </div>
     </div>
 </div>
-<div class="controls hidden">
-    <input type="button" value="Refresh menu" id="json" onclick="callJson()" />
-</div>
+<!--<div id="controls"  class="hidden"><input type="button" class="input-button" value="Refresh menu" id="json" onclick="callJson()" /></div>-->
 </body>
 </html>
 

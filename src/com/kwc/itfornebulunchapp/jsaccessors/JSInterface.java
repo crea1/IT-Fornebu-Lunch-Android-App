@@ -1,6 +1,7 @@
 package com.kwc.itfornebulunchapp.jsaccessors;
 
 import android.webkit.WebView;
+import com.kwc.itfornebulunchapp.handlers.DateHandler;
 import com.kwc.itfornebulunchapp.handlers.LunchDecoder;
 
 /**
@@ -46,5 +47,9 @@ public class JSInterface {
      */
     public String loadMenu() {
         return LunchDecoder.jsonWeekMenuFormatter();
+    }
+
+    public int getWeekdayNumber() {
+        return DateHandler.getWeekDayByNumber();
     }
 }
