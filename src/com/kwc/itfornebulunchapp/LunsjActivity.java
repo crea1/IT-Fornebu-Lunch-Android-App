@@ -45,15 +45,13 @@ public class LunsjActivity extends Activity {
         webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-        webView.setWebViewClient(new WebViewClient(){
+        webView.setWebViewClient(new WebViewClient() {
             // Hide the prograssdialog when the app is loaded.
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 progressDialog.hide();
             }
-            @Override
-            public void
         });
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl("file:///android_asset/www/index.html");

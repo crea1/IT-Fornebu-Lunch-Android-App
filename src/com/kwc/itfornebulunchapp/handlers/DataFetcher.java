@@ -3,7 +3,6 @@ package com.kwc.itfornebulunchapp.handlers;
 import com.kwc.itfornebulunchapp.utils.AlertBox;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -17,7 +16,7 @@ public final class DataFetcher {
     private DataFetcher() {
     }
 
-    private static String htmlPath = "http://leietaker.itfornebu.no/itfornebu/kantinemeny";
+    private static final String HTML_PATH = "http://leietaker.itfornebu.no/itfornebu/kantinemeny";
 
     public static String fetchHTML() {
 
@@ -25,7 +24,7 @@ public final class DataFetcher {
         StringBuilder content = new StringBuilder();
         // Read url content into StringBuilder
         try {
-            URL url = new URL(htmlPath);
+            URL url = new URL(HTML_PATH);
             BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
             while ((line = reader.readLine()) != null) {
                 content.append(line);

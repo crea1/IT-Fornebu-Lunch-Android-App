@@ -1,7 +1,5 @@
 package com.kwc.itfornebulunchapp.handlers;
 
-import com.kwc.itfornebulunchapp.utils.AlertBox;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -13,7 +11,9 @@ import java.util.HashMap;
  * @author Marius Kristensen
  */
 
-public class DateHandler {
+public final class DateHandler {
+    private DateHandler() {
+    }
 
     public static int getWeekDayByNumber() {
         Calendar calendar = new GregorianCalendar();
