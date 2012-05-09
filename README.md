@@ -13,6 +13,5 @@ I've tried to implement this app using WebView. I find it easier to style and ma
 To do
 ---------------------------------
 - Add a about screen + button.
-- In menu view add a timestamp for last refresh.
 - Replace spinner with something more fun.
 - Possibly a check to find what day it is and highlight that day in some way.
