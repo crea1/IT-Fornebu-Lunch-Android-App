@@ -86,12 +86,25 @@ public class LunsjActivity extends Activity {
                 webView.loadUrl("file:///android_asset/www/index.html");
                 return true;
             case R.id.about:
-                AlertBox.alertBox("About", "Denne appen er laget av Marius Kristensen.");
+                webView.loadUrl("file:///android_asset/www/about.html");
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    /**
+     * Back button. This makes it possible to go back from
+     * About to Main screen.
+     */
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        }
+    }
+
 
 
 }

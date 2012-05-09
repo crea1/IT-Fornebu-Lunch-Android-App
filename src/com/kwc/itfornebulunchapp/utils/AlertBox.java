@@ -24,16 +24,18 @@ public class AlertBox {
      * @param message the message to be displayed.
      */
     public static void alertBox(String title, String message) {
-        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle(title);
-        alertDialog.setMessage(message);
-        alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+        if (context != null) {
+            AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+            alertDialog.setTitle(title);
+            alertDialog.setMessage(message);
+            alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                // do some stuff here?
-            }
-        });
-        alertDialog.show();
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    // do some stuff here?
+                }
+            });
+            alertDialog.show();
+        }
     }
 }
