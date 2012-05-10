@@ -2,6 +2,7 @@ package com.kwc.itfornebulunchapp;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -102,6 +103,13 @@ public class LunsjActivity extends Activity {
     public void onBackPressed() {
         if (webView.canGoBack()) {
             webView.goBack();
+        } else {
+            // Return to home menu of phone.
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+
         }
     }
 
