@@ -15,3 +15,4 @@ To do
 - Add a about screen + button.
 - Replace spinner with something more fun.
 - Possibly a check to find what day it is and highlight that day in some way.
+- When in mainscreen, the back button should exit the application. But not in about screen.
