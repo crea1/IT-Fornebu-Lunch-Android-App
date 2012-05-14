@@ -4,3 +4,7 @@ IT-Fornebu-Lunch-Android-App.iml
 out/
 local.properties
 gen/
+my-release-key.keystore
+bin/
+play_stuff/
+*.apk
