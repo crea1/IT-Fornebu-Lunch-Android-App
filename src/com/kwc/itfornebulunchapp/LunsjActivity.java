@@ -26,6 +26,7 @@ import com.kwc.itfornebulunchapp.utils.AlertBox;
 public class LunsjActivity extends Activity {
 
     private WebView webView = null;
+    private JSInterface jsInterface;
     private static final String LOG_TAG = "ITFORNEBU-LUNCH";
 
     /** Called when the activity is first created. */
@@ -58,7 +59,7 @@ public class LunsjActivity extends Activity {
         webView.loadUrl("file:///android_asset/www/index.html");
 
         //Javascript accessors
-        JSInterface jsInterface = new JSInterface(webView);
+        jsInterface = new JSInterface(webView);
         webView.addJavascriptInterface(jsInterface, "jsinterface");
     }
 
@@ -84,7 +85,11 @@ public class LunsjActivity extends Activity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.refresh:
-                webView.loadUrl("file:///android_asset/www/index.html");
+                if(webView.canGoBack()) {
+                    webView.goBack();
+                } else {
+                    webView.loadUrl("file:///android_asset/www/index.html");
+                }
                 return true;
             case R.id.about:
                 webView.loadUrl("file:///android_asset/www/about.html");

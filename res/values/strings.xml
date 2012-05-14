@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">IT Fornebu Lunsjmeny</string>
-    <string name="menu_about">About</string>
-    <string name="menu_refresh">Refresh</string>
+    <string name="menu_about">Om</string>
+    <string name="menu_refresh">Oppdater</string>
 </resources>

@@ -76,7 +76,7 @@ function displayTimestamp() {
  * This method sends a request to the callJson
  * method in the jsinterface.
  */
-function callJson() {
+function callJavaForLunchUpdate() {
     $('div#info').addClass('hidden');
     $('div#timestamp').addClass('hidden');
     $('div#spinner').removeClass('hidden');
@@ -105,6 +105,9 @@ function callWeekday() {
  * When document is loaded.
  */
 $(document).ready(function() {
-    callJson();
+    $('div#info').addClass('hidden');
+    $('div#timestamp').addClass('hidden');
+    $('div#spinner').removeClass('hidden');
+    callJavaForLunchUpdate();
 });
 
