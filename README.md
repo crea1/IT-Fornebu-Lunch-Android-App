@@ -4,7 +4,10 @@ by Marius Haugli Kristensen
 
 Description
 ---------------------------------
-Just an app for displayin the lunch menu at IT Fornebu. It's based on screenscraping the (IT Fornebu homepage)[http://leietaker.itfornebu.no/itfornebu/kantinemeny] which unfortunately don't update at a regular interval (if updated at all). But this is as close I could get.
+Just an app for displayin the lunch menu at IT Fornebu. It's based on screenscraping the [IT Fornebu homepage](http://leietaker.itfornebu.no/itfornebu/kantinemeny) which unfortunately don't update at a regular interval (if updated at all). But this is as close I could get. 
+
+As of May 14th 2012 this is available on Google Play, but only for norwegians. [Check it out!](https://play.google.com/store/apps/details?id=com.kwc.itfornebulunchapp)
+
 
 Implementation
 ---------------------------------
