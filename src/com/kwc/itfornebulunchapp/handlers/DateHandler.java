@@ -1,5 +1,6 @@
 package com.kwc.itfornebulunchapp.handlers;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -45,4 +46,10 @@ public final class DateHandler {
 
         return day;
      }
+
+    public static String timestamp() {
+        String format = "dd.MM.yyyy HH:mm:ss";
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(new Date());
+    }
 }

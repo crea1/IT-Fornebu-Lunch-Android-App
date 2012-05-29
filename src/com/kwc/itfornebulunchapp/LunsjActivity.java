@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import com.kwc.itfornebulunchapp.handlers.InternalStorage;
 import com.kwc.itfornebulunchapp.jsaccessors.JSInterface;
 import com.kwc.itfornebulunchapp.utils.AlertBox;
 
@@ -27,7 +28,9 @@ public class LunsjActivity extends Activity {
 
     private WebView webView = null;
     private JSInterface jsInterface;
+    public static InternalStorage internalStorage;
     private static final String LOG_TAG = "ITFORNEBU-LUNCH";
+
 
     /** Called when the activity is first created. */
     @Override
@@ -38,6 +41,9 @@ public class LunsjActivity extends Activity {
         //initialize alertBox
         AlertBox alertBox = new AlertBox(LunsjActivity.this);
 
+        //Initialize file reading/writing
+        internalStorage = new InternalStorage(LunsjActivity.this);
+
         // Show progressdialog while the app loads.
         final ProgressDialog progressDialog = new ProgressDialog(LunsjActivity.this);
         progressDialog.setMessage("Loading ...");
@@ -47,6 +53,13 @@ public class LunsjActivity extends Activity {
         webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/www/index.html");
+
+        //Javascript accessors
+        jsInterface = new JSInterface(webView);
+        webView.addJavascriptInterface(jsInterface, "jsinterface");
+
         webView.setWebViewClient(new WebViewClient() {
             // Hide the prograssdialog when the app is loaded.
             @Override
@@ -55,12 +68,6 @@ public class LunsjActivity extends Activity {
                 progressDialog.hide();
             }
         });
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("file:///android_asset/www/index.html");
-
-        //Javascript accessors
-        jsInterface = new JSInterface(webView);
-        webView.addJavascriptInterface(jsInterface, "jsinterface");
     }
 
     /**
@@ -77,15 +84,16 @@ public class LunsjActivity extends Activity {
 
     /**
      * Options menu OnClick handler.
-     * @param item
-     * @return
+     * @param item -
+     * @return true/false
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.refresh:
-                if(webView.canGoBack()) {
+                internalStorage.deleteFile();
+                if (webView.canGoBack()) {
                     webView.goBack();
                 } else {
                     webView.loadUrl("file:///android_asset/www/index.html");
@@ -117,8 +125,4 @@ public class LunsjActivity extends Activity {
 
         }
     }
-
-
-
 }
-

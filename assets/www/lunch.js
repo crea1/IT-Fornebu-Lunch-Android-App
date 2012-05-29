@@ -4,21 +4,21 @@ var flashTextCounter=0;
 /**
  * This method retrieves the json object from the jsinterface
  */
-function getJSONMenu() {
+/*function getJSONMenu() {
     json = jsinterface.loadMenu();
-
-    callUpdate();
-}
+    updateHTMLWithMenu();
+}*/
 
 
 /**
  * This method parses the json object and updates the html
  */
-function updateThis() {
+function updateHTMLWithMenu() {
+     json = jsinterface.loadMenu();
     try {
         var meny = JSON.parse(json);
     } catch(e) {
-        alert("Something went wrong when parsing lunch json. \n"+e.toString());
+        alert("Something went wrong when parsing lunch json. \n"+e.toString() + json);
     }
     // Check the response and use jQuery to fill up menu
     if (!(meny.Monday == "null")) {
@@ -30,8 +30,9 @@ function updateThis() {
 
         $('div#menu').removeClass('hidden');
         $('div#spinner').addClass('hidden');
+        $('div#timestamp').removeClass('hidden')
+        $('div#timestamp').replaceWith('<div id="timestamp">Meny hentet: ' + meny.Timestamp+ '</div>');
 
-        displayTimestamp();
     } else {
         $('div#info').empty()
         $('div#info').append('<p>Kunne ikke koble til Skynet...</p>');
@@ -42,7 +43,9 @@ function updateThis() {
 }
 
 
-
+/**
+ * This function displays text if menu can't be found.
+ */
 function flashText() {
     flashTextCounter++;
     if (flashTextCounter == 1) {
@@ -56,22 +59,6 @@ function flashText() {
 
 }
 
-
-function displayTimestamp() {
-    $('div#timestamp').removeClass('hidden')
-    var d = new Date();
-    // adding 0 if number is less than 10
-    var hours =   ((d.getHours()   < 10 ? '0' : '') + d.getHours().toString());
-    var minutes = ((d.getMinutes() < 10 ? '0' : '') + d.getMinutes().toString());
-    var seconds = ((d.getSeconds() < 10 ? '0' : '') + d.getSeconds().toString());
-
-    $('div#timestamp').empty()
-    $('div#timestamp').append('Meny hentet: ' + d.getDate() + '.'
-        + (d.getMonth()+1) + '.' + d.getFullYear() + ' '
-        + hours + ':' + minutes + ':' + seconds);
-}
-
-
 /**
  * This method sends a request to the callJson
  * method in the jsinterface.
@@ -80,10 +67,9 @@ function callJavaForLunchUpdate() {
     $('div#info').addClass('hidden');
     $('div#timestamp').addClass('hidden');
     $('div#spinner').removeClass('hidden');
-    window.jsinterface.callJson();
+    //window.jsinterface.fetchLunch();
+    updateHTMLWithMenu();
 }
-
-
 
 function callUpdate() {
     window.jsinterface.callUpdate();

@@ -42,7 +42,8 @@ public final class LunchDecoder {
         + "\"Tuesday\":\"" + menu.getTuesday().getDish() + "\","
         + "\"Wednesday\":\"" + menu.getWednesday().getDish() + "\","
         + "\"Thursday\":\"" + menu.getThursday().getDish() + "\","
-        + "\"Friday\":\"" + menu.getFriday().getDish() + "\""
+        + "\"Friday\":\"" + menu.getFriday().getDish() + "\","
+        + "\"Timestamp\":\"" + DateHandler.timestamp() + "\""
         + "}";
         return s;
     }

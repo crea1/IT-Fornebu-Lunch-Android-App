@@ -1,6 +1,7 @@
 package com.kwc.itfornebulunchapp.jsaccessors;
 
 import android.webkit.WebView;
+import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.handlers.DateHandler;
 import com.kwc.itfornebulunchapp.handlers.LunchDecoder;
 
@@ -8,6 +9,10 @@ import com.kwc.itfornebulunchapp.handlers.LunchDecoder;
  * JSInteface.
  * This handles the function calls between the javascript
  * in the html and the java.
+ *
+ * Note: To call a javascript function from java part. Use this
+ * webView.loadUrl("javascript:getJSONMenu()");
+ *
  * @since 1.0
  * @author Marius Kristensen
  */
@@ -28,25 +33,15 @@ public class JSInterface {
     }
 
     /**
-     * Calls a JavaScript function to retrieve the menu.
-     */
-    public void callJson() {
-        webView.loadUrl("javascript:getJSONMenu()");
-    }
-
-    /**
-     * Calls a javascript function that updates the html.
-     */
-   public void callUpdate() {
-        webView.loadUrl("javascript:updateThis()");
-    }
-
-    /**
      * Returns a JSON formatted menu object to HTML.
      * @return JSON Object in String format.
      */
     public String loadMenu() {
-        return LunchDecoder.jsonWeekMenuFormatter();
+        if (!LunsjActivity.internalStorage.fileExists()) {
+            LunsjActivity.internalStorage.writeToFile(LunchDecoder.jsonWeekMenuFormatter());
+        }
+        return LunsjActivity.internalStorage.readFromFile();
+        //return LunchDecoder.jsonWeekMenuFormatter();
     }
 
     public int getWeekdayNumber() {
