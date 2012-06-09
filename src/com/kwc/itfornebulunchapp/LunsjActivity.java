@@ -42,7 +42,7 @@ public class LunsjActivity extends Activity {
 
         // Show progressdialog while the app loads.
         final ProgressDialog progressDialog = new ProgressDialog(LunsjActivity.this);
-        progressDialog.setMessage("Loading ...");
+        progressDialog.setMessage("Laster ...");
         progressDialog.setCancelable(false);
         progressDialog.show();
 
