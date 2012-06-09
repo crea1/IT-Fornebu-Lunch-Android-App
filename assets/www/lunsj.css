@@ -9,6 +9,7 @@ body {background-color: #000; color: #fff; }
 .information {text-align: center; margin:40px; font-size: 0.8em;}
 .dish {font-weight: normal;}
 .day {font-weight: bold; margin-bottom: 15px;}
+.today {background-color: #3d3; font-size: 1.4em; }
 #controls {text-align: center; margin-top: 40px;}
 .hidden { display: none; visibility: hidden; }
 #timestamp { position:absolute; bottom:5px; text-align: center; font-size: 0.8em; }

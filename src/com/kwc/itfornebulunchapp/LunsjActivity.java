@@ -14,10 +14,6 @@ import com.kwc.itfornebulunchapp.handlers.InternalStorage;
 import com.kwc.itfornebulunchapp.jsaccessors.JSInterface;
 import com.kwc.itfornebulunchapp.utils.AlertBox;
 
-
-//http://code.google.com/p/myandroidwidgets/source/browse/#svn%2Ftrunk%2FJQueryExample
-//http://techdroid.kbeanie.com/2010/10/android-webview-javascript-and-css.html
-
 /**
  * The main activity.
  * @since 1.0

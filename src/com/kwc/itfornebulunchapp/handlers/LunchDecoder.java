@@ -43,7 +43,8 @@ public final class LunchDecoder {
         + "\"Wednesday\":\"" + menu.getWednesday().getDish() + "\","
         + "\"Thursday\":\"" + menu.getThursday().getDish() + "\","
         + "\"Friday\":\"" + menu.getFriday().getDish() + "\","
-        + "\"Timestamp\":\"" + DateHandler.timestamp() + "\""
+        + "\"Timestamp\":\"" + DateHandler.timestamp() + "\","
+        + "\"DayOfWeek\":\"" + DateHandler.getWeekDayByNumber() + "\""
         + "}";
         return s;
     }

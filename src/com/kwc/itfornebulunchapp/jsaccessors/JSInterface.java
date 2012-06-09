@@ -36,6 +36,7 @@ public class JSInterface {
      * Returns a JSON formatted menu object to HTML.
      * @return JSON Object in String format.
      */
+    @SuppressWarnings("unused")
     public String loadMenu() {
         if (!LunsjActivity.internalStorage.fileExists()) {
             LunsjActivity.internalStorage.writeToFile(LunchDecoder.jsonWeekMenuFormatter());

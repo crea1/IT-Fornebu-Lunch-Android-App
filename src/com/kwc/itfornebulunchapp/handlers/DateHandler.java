@@ -47,6 +47,11 @@ public final class DateHandler {
         return day;
      }
 
+    /**
+     * Generates the timestamp used to display when the lunch menu was
+     * downloaded.
+     * @return String with the format dd.MM.YYYY HH:mm:ss.
+     */
     public static String timestamp() {
         String format = "dd.MM.yyyy HH:mm:ss";
         SimpleDateFormat sdf = new SimpleDateFormat(format);

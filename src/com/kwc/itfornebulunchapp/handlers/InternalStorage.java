@@ -9,6 +9,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
+ * This class handles the internal storage of the lunch in the phones
+ * temporary storage. Meaning it will only last as long as the app stays
+ * alive. The app will look for this file first to find the lunch data. If
+ * it is missing it will download the lunch and recreate it.
+ *
  * @author Marius Kristensen
  * @since 1.1
  */
@@ -18,7 +23,7 @@ public class InternalStorage {
     private Context fileContext;
 
     /**
-     * Constructor
+     * Constructor.
      * @param fileContext
      */
     public InternalStorage(Context fileContext) {
@@ -74,13 +79,16 @@ public class InternalStorage {
     }
 
     /**
-     * Checks if the file we use already exists
+     * Checks if the file we use already exists.
      */
     public boolean fileExists() {
         File file = fileContext.getFileStreamPath(fileName);
         return file.exists();
     }
 
+    /**
+     * Deletes the file if it exists.
+     */
     public void deleteFile() {
         if (fileExists()) {
             fileContext.deleteFile(fileName);
