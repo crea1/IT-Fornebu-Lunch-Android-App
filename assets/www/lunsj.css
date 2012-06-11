@@ -3,33 +3,26 @@
  * @since 1.0
  * @author Marius Kristensen
  */
-html { height: 100%; }
-body {
-    color: #202020;
-    height: 98%;
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,103,158,1)), color-stop(50%,rgba(43,136,217,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+html 				{ height: 100%; }
+body 				{ color: #ffffff; background-color: #000; height: 98%; margin: 0; position:relative; }
+#header 			{ text-align: center; margin: 5px 5px 10px; color: #ffffff; font: 1.4em 'RobotoThin'; border-bottom: 1px solid #33B5E5; }
+#menu 				{ height: 100%; margin: 0 5px 0 5px;}
+.information 		{ text-align: center; margin:40px; font-size: 0.8em; }
+.container 			{ position:relative; height: 75px; }
+.day 				{ color: #33B5E5; width: 30px; font: 3.5em 'RobotoThin'; position: absolute; bottom: -10px; }
+.dish 			    { font: 1.0em 'Arial'; color: #ffffff; float: left; position: absolute; bottom: 0; left: 50px; }
+.today 				{ border-bottom: 1px solid #33B5E5; }
+#controls 			{ text-align: center; margin-top: 40px;}
+.hidden 			{ display: none; visibility: hidden; }
+#timestamp 			{ position:absolute; bottom:5px; font-size: 0.8em; color: #505050; }
+#about              { font: 1.0em 'Arial'; color: #ffffff; text-align: center; margin-top: 15px; }
+
+
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('Roboto-Thin-webfont.woff') format('woff'),
+    url('Roboto-Thin-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
 }
-#header {font-size: 1.2em; text-align: center; margin: 5px 5px 20px; font-weight: bold; text-shadow:0 0 3px #FFFFFF; }
-#menu {height: 100%; margin: 0 5px 0 5px;}
-.information {text-align: center; margin:40px; font-size: 0.8em;}
-.day div {font-weight: normal;}
-.day {
-    font-weight: bold; margin-bottom: 15px;
-    opacity: 0.7;
-    padding: 4px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -webkit-box-shadow:0px 0px 5px #666666;
-    border: 0 solid #000;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,226,226,1)), color-stop(48%,rgba(239,239,239,1)), color-stop(100%,rgba(226,226,226,1))); /* Chrome,Safari4+ */    }
-.today {
-    border: 1px solid #fff;
-    opacity: 0.9;
-    -webkit-box-shadow:0 0 5px #666666;
-}
-#controls {text-align: center; margin-top: 40px;}
-.hidden { display: none; visibility: hidden; }
-#timestamp { position:absolute; bottom:5px; text-align: center; font-size: 0.8em; color: #505050; }

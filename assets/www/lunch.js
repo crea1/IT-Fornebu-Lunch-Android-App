@@ -16,11 +16,11 @@ function updateHTMLWithMenu() {
     }
     // Check the response and use jQuery to fill up menu
     if (!(meny.Monday == "null")) {
-        $('div.monday').replaceWith('<div class="monday dish">' + meny.Monday + '</div>');
-        $('div.tuesday').replaceWith('<div class="tuesday dish">' + meny.Tuesday + '</div>');
-        $('div.wednesday').replaceWith('<div class="wednesday dish">' + meny.Wednesday + '</div>');
-        $('div.thursday').replaceWith('<div class="thursday dish">' + meny.Thursday + '</div>');
-        $('div.friday').replaceWith('<div class="friday dish">' + meny.Friday + '</div>');
+        $('div#monday').html(meny.Monday);
+        $('div#tuesday').html(meny.Tuesday);
+        $('div#wednesday').html(meny.Wednesday);
+        $('div#thursday').html(meny.Thursday);
+        $('div#friday').html(meny.Friday);
         highlightToday(parseInt(meny.DayOfWeek));
         $('div#menu').removeClass('hidden');
         $('div#spinner').addClass('hidden');
@@ -39,19 +39,19 @@ function updateHTMLWithMenu() {
 function highlightToday(today) {
     switch(today) {
         case 2:
-            $('div.mondaycontainer').addClass('today');
+            $('div#monday').addClass('today');
             break;
         case 3:
-            $('div.tuesdaycontainer').addClass('today');
+            $('div#tuesday').addClass('today');
             break;
         case 4:
-            $('div.wednesdaycontainer').addClass('today');
+            $('div#wednesday').addClass('today');
             break;
         case 5:
-            $('div.thursdaycontainer').addClass('today');
+            $('div#thursday').addClass('today');
             break;
         case 6:
-            $('div.fridaycontainer').addClass('today');
+            $('div#friday').addClass('today');
             break;
     }
 }
