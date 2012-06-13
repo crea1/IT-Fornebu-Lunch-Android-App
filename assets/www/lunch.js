@@ -29,7 +29,6 @@ function updateHTMLWithMenu() {
 
     } else {
         $('div#info').empty()
-        $('div#info').append('<p>Kunne ikke koble til Skynet...</p>');
         $('div#info').removeClass('hidden');
 
         intervalID = setInterval(flashText, 1000);
@@ -39,19 +38,19 @@ function updateHTMLWithMenu() {
 function highlightToday(today) {
     switch(today) {
         case 2:
-            $('div#monday').addClass('today');
+            $('div#mcontainer').addClass('today');
             break;
         case 3:
-            $('div#tuesday').addClass('today');
+            $('div#tcontainer').addClass('today');
             break;
         case 4:
-            $('div#wednesday').addClass('today');
+            $('div#wcontainer').addClass('today');
             break;
         case 5:
-            $('div#thursday').addClass('today');
+            $('div#thcontainer').addClass('today');
             break;
         case 6:
-            $('div#friday').addClass('today');
+            $('div#fcontainer').addClass('today');
             break;
     }
 }
@@ -63,9 +62,9 @@ function highlightToday(today) {
 function flashText() {
     flashTextCounter++;
     if (flashTextCounter == 1) {
-        $('div#info').append('<p>Kunne ikke koble til Skynet...</p>');
+        $('div#info').append('<p>Kunne ikke laste ned lunsj.</p>');
     } else if (flashTextCounter == 2) {
-        $('div#info').append('<p>Vennligst kontakt Cyberdyne Systems.</p>');
+        $('div#info').append('<p>Trykk Oppdater for å prøve igjen</p>');
     } else {
         intervalID=window.clearInterval(intervalID);
         flashTextCounter=0;
