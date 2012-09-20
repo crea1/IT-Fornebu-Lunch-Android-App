@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.*;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -21,9 +24,7 @@ import com.kwc.itfornebulunchapp.utils.AlertBox;
 public class LunsjActivity extends Activity {
 
     private WebView webView = null;
-    private JSInterface jsInterface;
     public static InternalStorage internalStorage;
-    private static final String LOG_TAG = "ITFORNEBU-LUNCH";
 
 
     /** Called when the activity is first created. */
@@ -51,11 +52,11 @@ public class LunsjActivity extends Activity {
         webView.loadUrl("file:///android_asset/www/index.html");
 
         //Javascript accessors
-        jsInterface = new JSInterface(webView);
+        JSInterface jsInterface = new JSInterface(webView);
         webView.addJavascriptInterface(jsInterface, "jsinterface");
 
         webView.setWebViewClient(new WebViewClient() {
-            // Hide the prograssdialog when the app is loaded.
+            // Hide the progress dialog when the app is loaded.
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
