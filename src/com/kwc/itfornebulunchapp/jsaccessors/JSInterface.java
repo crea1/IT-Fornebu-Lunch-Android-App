@@ -3,7 +3,7 @@ package com.kwc.itfornebulunchapp.jsaccessors;
 import android.webkit.WebView;
 import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.handlers.DateHandler;
-import com.kwc.itfornebulunchapp.handlers.LunchDecoder;
+import com.kwc.itfornebulunchapp.handlers.MenuJsonEncoder;
 
 /**
  * JSInteface.
@@ -39,10 +39,9 @@ public class JSInterface {
     @SuppressWarnings("unused")
     public String loadMenu() {
         if (!LunsjActivity.internalStorage.fileExists()) {
-            LunsjActivity.internalStorage.writeToFile(LunchDecoder.jsonWeekMenuFormatter());
+            LunsjActivity.internalStorage.writeToFile(MenuJsonEncoder.jsonWeekMenuFormatter());
         }
         return LunsjActivity.internalStorage.readFromFile();
-        //return LunchDecoder.jsonWeekMenuFormatter();
     }
 
     public int getWeekdayNumber() {

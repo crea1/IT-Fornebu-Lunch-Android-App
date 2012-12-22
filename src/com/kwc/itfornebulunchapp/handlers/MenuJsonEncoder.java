@@ -1,33 +1,16 @@
 package com.kwc.itfornebulunchapp.handlers;
 
 import com.kwc.itfornebulunchapp.model.WeekMenu;
+import com.kwc.itfornebulunchapp.service.WeekMenuService;
 
 /**
- * LunchDecoder.
+ * MenuJsonEncoder.
  * @since 1.0
  * @author Marius Kristensen
  */
 
-public final class LunchDecoder {
-    private LunchDecoder() {
-    }
-
-    /**
-     * This method reads the HTML from the Lunch page at itfornebu.no
-     * and searches for the menu using a regexp. It then sorts the
-     * data to the different weekdays.
-     * @return WeekMenu object
-     */
-    private static WeekMenu getLunch() {
-        // Get HTML
-        String content = DataFetcher.fetchHTML();
-
-        if (content != null) {
-            return DataSorter.sortLunchData(content);
-        } else {
-            //todo add some error handling here.
-            return null;
-        }
+public final class MenuJsonEncoder {
+    private MenuJsonEncoder() {
     }
 
     /**
@@ -35,7 +18,9 @@ public final class LunchDecoder {
      * @return JSON-formatted string.
      */
     public static String jsonWeekMenuFormatter() {
-        WeekMenu menu = getLunch();
+        WeekMenuService weekMenuStuff = new WeekMenuService();
+
+        WeekMenu menu = weekMenuStuff.getWeekMenu();
         String s =
         "{"
         + "\"Monday\":\"" + menu.getMonday().getDish() + "\","
