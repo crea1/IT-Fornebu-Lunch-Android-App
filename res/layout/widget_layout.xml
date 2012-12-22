@@ -3,6 +3,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:background="@android:color/darker_gray">
+              android:background="@android:color/black">
 
+    <TextView android:id="@+id/update"
+              style="@android:style/TextAppearance.Small"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="left"
+              android:text="Placeholder"
+              android:layout_margin="4dip"
+              android:gravity="center_horizontal|center_vertical"
+              android:textColor="#33B5E5">
+              </TextView>
 </LinearLayout>
