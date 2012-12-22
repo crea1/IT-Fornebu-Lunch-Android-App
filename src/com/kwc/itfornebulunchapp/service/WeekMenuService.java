@@ -2,6 +2,7 @@ package com.kwc.itfornebulunchapp.service;
 
 import com.kwc.itfornebulunchapp.handlers.DataFetcher;
 import com.kwc.itfornebulunchapp.handlers.DataSorter;
+import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
 
 import java.util.Calendar;
@@ -32,39 +33,36 @@ public class WeekMenuService {
             return null;
         }
     }
-    public String getTodaysDish() {
-        String dish = "";
+    public DayMenu getTodaysDish() {
         WeekMenu weekMenu = getWeekMenu();
         Calendar cal = new GregorianCalendar();
         int day = cal.get(Calendar.DAY_OF_WEEK);
+        DayMenu dish = null;
 
-        if (weekMenu == null) {
-            dish = "Noe gikk galt under henting av meny. Trykk for å laste på nytt";
-        } else {
+        if (weekMenu != null) {
             switch (day) {
                 case Calendar.MONDAY:
-                    dish = weekMenu.getMonday().getDish();
+                    dish = weekMenu.getMonday();
                     break;
                 case Calendar.TUESDAY:
-                    dish = weekMenu.getTuesday().getDish();
+                    dish = weekMenu.getTuesday();
                     break;
                 case Calendar.WEDNESDAY:
-                    dish = weekMenu.getWednesday().getDish();
+                    dish = weekMenu.getWednesday();
                     break;
                 case Calendar.THURSDAY:
-                    dish = weekMenu.getThursday().getDish();
+                    dish = weekMenu.getThursday();
                     break;
                 case Calendar.FRIDAY:
-                    dish = weekMenu.getFriday().getDish();
+                    dish = weekMenu.getFriday();
                     break;
                 case Calendar.SATURDAY:
-                    dish = "Kantinen er stengt på lørdager.";
+                    dish = new DayMenu("Lørdag", "Kantinen er stengt i dag.", Calendar.SATURDAY);
                     break;
                 case Calendar.SUNDAY:
-                    dish = "Kantinen er stengt på søndager.";
+                    dish = new DayMenu("Søndag", "Kantinen er stengt i dag.", Calendar.SUNDAY);
                     break;
                 default:
-                    dish = "Ingen meny tilgjengelig";
             }
         }
         return dish;

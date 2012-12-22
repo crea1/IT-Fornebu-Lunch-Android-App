@@ -3,16 +3,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:background="@drawable/widget_shape">
+              android:background="@drawable/widget_shape"
+              android:orientation="vertical"
+              >
 
-    <TextView android:id="@+id/update"
+    <TextView android:id="@+id/day"
               style="@android:style/TextAppearance.Small"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_gravity="left"
-              android:text="Placeholder"
-              android:layout_margin="4dip"
-              android:gravity="center_horizontal|center_vertical"
-              android:textColor="#33B5E5">
+              android:layout_height="wrap_content"
+              android:text="Mandag"
+              android:textColor="#33B5E5"
+              android:gravity="center">
+    </TextView>
+    <TextView android:id="@+id/update"
+              style="@android:style/TextAppearance.Widget"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Dagens rett"
+              android:layout_marginBottom="2dp"
+              android:layout_marginLeft="2dp"
+              android:layout_marginRight="2dp"
+              android:textColor="#FFFFFF"
+              android:gravity="center">
               </TextView>
 </LinearLayout>

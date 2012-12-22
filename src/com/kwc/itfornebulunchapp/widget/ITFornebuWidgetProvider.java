@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 import com.kwc.itfornebulunchapp.R;
+import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.service.WeekMenuService;
 
 import java.util.Random;
@@ -30,13 +31,15 @@ public class ITFornebuWidgetProvider extends AppWidgetProvider {
 
         for (int widgetId : allWidgetIds) {
             WeekMenuService weekMenuService = new WeekMenuService();
-            String updatedText = weekMenuService.getTodaysDish();
+            DayMenu todaysMenu = weekMenuService.getTodaysDish();
+            String updatedDish = todaysMenu.getDish();
 
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 
-            Log.d(LOGTAG, "updating widget with text: " + updatedText);
+            Log.d(LOGTAG, "updating widget with text: " + updatedDish);
             //Update widget text
-            remoteViews.setTextViewText(R.id.update, updatedText);
+            remoteViews.setTextViewText(R.id.update, todaysMenu.getDish());
+            remoteViews.setTextViewText(R.id.day, todaysMenu.getWeekday());
 
             // OnClickListener
             setupOnClickListener(context, appWidgetIds, remoteViews);
