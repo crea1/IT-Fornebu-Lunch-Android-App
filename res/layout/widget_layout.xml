@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:background="@android:color/black">
+              android:background="@drawable/widget_shape">
 
     <TextView android:id="@+id/update"
               style="@android:style/TextAppearance.Small"
