@@ -37,24 +37,35 @@ public class WeekMenuService {
         WeekMenu weekMenu = getWeekMenu();
         Calendar cal = new GregorianCalendar();
         int day = cal.get(Calendar.DAY_OF_WEEK);
-        switch (day) {
-            case Calendar.MONDAY:
-                dish = weekMenu.getMonday().getDish();
-                break;
-            case Calendar.TUESDAY:
-                dish = weekMenu.getTuesday().getDish();
-                break;
-            case Calendar.WEDNESDAY:
-                dish = weekMenu.getWednesday().getDish();
-                break;
-            case Calendar.THURSDAY:
-                dish = weekMenu.getThursday().getDish();
-                break;
-            case Calendar.FRIDAY:
-                dish = weekMenu.getFriday().getDish();
-                break;
-            default:
-                dish = "Ingen meny tilgjengelig";
+
+        if (weekMenu == null) {
+            dish = "Noe gikk galt under henting av meny. Trykk for å laste på nytt";
+        } else {
+            switch (day) {
+                case Calendar.MONDAY:
+                    dish = weekMenu.getMonday().getDish();
+                    break;
+                case Calendar.TUESDAY:
+                    dish = weekMenu.getTuesday().getDish();
+                    break;
+                case Calendar.WEDNESDAY:
+                    dish = weekMenu.getWednesday().getDish();
+                    break;
+                case Calendar.THURSDAY:
+                    dish = weekMenu.getThursday().getDish();
+                    break;
+                case Calendar.FRIDAY:
+                    dish = weekMenu.getFriday().getDish();
+                    break;
+                case Calendar.SATURDAY:
+                    dish = "Kantinen er stengt på lørdager.";
+                    break;
+                case Calendar.SUNDAY:
+                    dish = "Kantinen er stengt på søndager.";
+                    break;
+                default:
+                    dish = "Ingen meny tilgjengelig";
+            }
         }
         return dish;
     }
