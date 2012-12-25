@@ -33,7 +33,6 @@ public final class DataFetcher {
             AlertBox.alertBox("Error", "Failed to retrieve lunch from source.");
             e.printStackTrace();
         } catch (IOException e) {
-            AlertBox.alertBox("Error", "Failed to retrieve lunch from source.");
             e.printStackTrace();
         }
 
