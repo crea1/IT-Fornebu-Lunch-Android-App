@@ -9,11 +9,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
- * Created with IntelliJ IDEA.
- * User: crea
- * Date: 12/22/12
- * Time: 5:23 PM
- * To change this template use File | Settings | File Templates.
+ * @author Marius Kristensen
+ * @since 1.3
  */
 public class WeekMenuService {
     /**

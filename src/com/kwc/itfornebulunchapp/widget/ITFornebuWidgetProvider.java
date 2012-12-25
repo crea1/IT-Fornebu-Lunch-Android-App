@@ -42,7 +42,7 @@ public class ITFornebuWidgetProvider extends AppWidgetProvider {
             remoteViews.setTextViewText(R.id.day, todaysMenu.getWeekday());
 
             // OnClickListener
-            setupOnClickListener(context, appWidgetIds, remoteViews);
+            //setupOnClickListener(context, appWidgetIds, remoteViews);
 
             // Update the widget
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
