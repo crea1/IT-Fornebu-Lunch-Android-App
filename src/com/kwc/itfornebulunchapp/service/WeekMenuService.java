@@ -60,6 +60,7 @@ public class WeekMenuService {
                     dish = new DayMenu("Søndag", "Kantinen er stengt i dag.", Calendar.SUNDAY);
                     break;
                 default:
+                    dish = new DayMenu("Error", "Henting av lunsjmeny feilet.", day);
             }
         }
         return dish;
