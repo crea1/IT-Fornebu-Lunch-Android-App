@@ -39,11 +39,11 @@ public final class DataSorter {
         }
 
         // Sort list and put it in a menu
-        theWeekMenu.setMonday(new DayMenu("Monday", menu.get("mandag"), 2));
-        theWeekMenu.setTuesday(new DayMenu("Tuesday", menu.get("tirsdag"), 3));
-        theWeekMenu.setWednesday(new DayMenu("Wednesday", menu.get("onsdag"), 4));
-        theWeekMenu.setThursday(new DayMenu("Thursday", menu.get("torsdag"), 5));
-        theWeekMenu.setFriday(new DayMenu("Friday", menu.get("fredag"), 6));
+        theWeekMenu.setMonday(new DayMenu("Mandag", menu.get("mandag"), 2));
+        theWeekMenu.setTuesday(new DayMenu("Tirsdag", menu.get("tirsdag"), 3));
+        theWeekMenu.setWednesday(new DayMenu("Onsdag", menu.get("onsdag"), 4));
+        theWeekMenu.setThursday(new DayMenu("Torsdag", menu.get("torsdag"), 5));
+        theWeekMenu.setFriday(new DayMenu("Fredag", menu.get("fredag"), 6));
 
         return theWeekMenu;
     }
