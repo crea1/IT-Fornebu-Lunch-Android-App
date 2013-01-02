@@ -1,6 +1,7 @@
 package com.kwc.itfornebulunchapp.controllers;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,6 +19,9 @@ import java.io.IOException;
  * @since 1.1
  */
 public class InternalStorage {
+
+    private static final String LOGTAG = "ITFornebuLunchApp";
+
     private final String fileName = "lunch.json";
 
     private Context fileContext;
@@ -38,6 +42,7 @@ public class InternalStorage {
      * @return true or false
      */
     public boolean writeToFile(String jsonString) {
+        Log.d(LOGTAG, "Write file to internal storage.");
         FileOutputStream fos;
         try {
             fos = fileContext.openFileOutput(fileName, Context.MODE_PRIVATE);
@@ -56,6 +61,7 @@ public class InternalStorage {
      * @return string with file content.
      */
     public String readFromFile() {
+        Log.d(LOGTAG, "Read from file in internal storage.");
         String fileString = "";
         FileInputStream fis = null;
         try {
@@ -91,6 +97,7 @@ public class InternalStorage {
      */
     public void deleteFile() {
         if (fileExists()) {
+            Log.d(LOGTAG, "Delete file in internal storage.");
             fileContext.deleteFile(fileName);
         }
     }

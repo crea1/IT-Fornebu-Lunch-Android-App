@@ -21,7 +21,7 @@ import com.kwc.itfornebulunchapp.service.WeekMenuService;
  */
 public class ITFornebuWidgetProvider extends AppWidgetProvider {
 
-    private static final String LOGTAG = "LUNCHWIDGET";
+    private static final String LOGTAG = "ITFornebuLunchApp";
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {

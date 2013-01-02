@@ -26,6 +26,7 @@ public class LunsjActivity extends Activity {
     private WebView webView = null;
     public static InternalStorage internalStorage;
 
+    private static final String LOGTAG = "ITFornebuLunchApp";
 
     /** Called when the activity is first created. */
     @Override
