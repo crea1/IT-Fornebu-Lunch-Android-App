@@ -42,7 +42,7 @@ public class InternalStorage {
      * @return true or false
      */
     public boolean writeToFile(String jsonString) {
-        Log.d(LOGTAG, "Write file to internal storage.");
+        Log.d(LOGTAG, "Write file to internal storage. " + jsonString);
         FileOutputStream fos;
         try {
             fos = fileContext.openFileOutput(fileName, Context.MODE_PRIVATE);

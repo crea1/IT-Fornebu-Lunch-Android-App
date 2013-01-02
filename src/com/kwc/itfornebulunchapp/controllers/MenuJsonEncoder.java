@@ -28,7 +28,7 @@ public final class MenuJsonEncoder {
         + "\"Wednesday\":\"" + menu.getWednesday().getDish() + "\","
         + "\"Thursday\":\"" + menu.getThursday().getDish() + "\","
         + "\"Friday\":\"" + menu.getFriday().getDish() + "\","
-        + "\"Timestamp\":\"" + DateHandler.timestamp() + "\","
+        + "\"Timestamp\":\"" + menu.getTimestamp() + "\","
         + "\"DayOfWeek\":\"" + DateHandler.getWeekDayByNumber() + "\""
         + "}";
         return s;

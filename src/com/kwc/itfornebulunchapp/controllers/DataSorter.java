@@ -3,6 +3,7 @@ package com.kwc.itfornebulunchapp.controllers;
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -27,7 +28,7 @@ public final class DataSorter {
                                 + "</p></span>";
 
     public static WeekMenu sortLunchData(String html) {
-        WeekMenu theWeekMenu = new WeekMenu();
+        WeekMenu theWeekMenu = new WeekMenu(DateHandler.timestamp());
         HashMap<String, String> menu = new HashMap<String, String>();
 
         // Do regexp

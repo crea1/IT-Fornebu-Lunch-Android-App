@@ -13,6 +13,11 @@ public class WeekMenu {
     private DayMenu friday;
     private DayMenu saturday;
     private DayMenu sunday;
+    private String timestamp;
+
+    public WeekMenu(String timestamp) {
+        this.timestamp = timestamp;
+    }
 
     public final DayMenu getMonday() {
         return monday;
@@ -69,4 +74,9 @@ public class WeekMenu {
     public final void setSunday(final DayMenu sunday) {
         this.sunday = sunday;
     }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
 }
