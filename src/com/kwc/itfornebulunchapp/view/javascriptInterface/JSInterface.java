@@ -4,6 +4,7 @@ import android.webkit.WebView;
 import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.controllers.DateHandler;
 import com.kwc.itfornebulunchapp.controllers.MenuJsonEncoder;
+import com.kwc.itfornebulunchapp.service.WeekMenuService;
 
 /**
  * JSInteface.
@@ -23,6 +24,7 @@ public class JSInterface {
      * WebView.
      */
     private WebView webView;
+    private WeekMenuService weekMenuService;
 
     /**
      * Constructor.
@@ -30,6 +32,7 @@ public class JSInterface {
      */
     public JSInterface(final WebView webView) {
         this.webView = webView;
+        weekMenuService = new WeekMenuService();
     }
 
     /**
@@ -38,10 +41,7 @@ public class JSInterface {
      */
     @SuppressWarnings("unused")
     public String loadMenu() {
-        if (!LunsjActivity.internalStorage.fileExists()) {
-            LunsjActivity.internalStorage.writeToFile(MenuJsonEncoder.jsonWeekMenuFormatter());
-        }
-        return LunsjActivity.internalStorage.readFromFile();
+        return weekMenuService.getWeekMenuJsonString();
     }
 
     public int getWeekdayNumber() {

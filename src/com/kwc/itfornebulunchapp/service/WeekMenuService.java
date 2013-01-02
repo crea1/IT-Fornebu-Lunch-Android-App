@@ -1,7 +1,9 @@
 package com.kwc.itfornebulunchapp.service;
 
+import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.controllers.DataFetcher;
 import com.kwc.itfornebulunchapp.controllers.DataSorter;
+import com.kwc.itfornebulunchapp.controllers.MenuJsonEncoder;
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
 
@@ -65,5 +67,12 @@ public class WeekMenuService {
             }
         }
         return dish;
+    }
+
+    public String getWeekMenuJsonString() {
+        if (!LunsjActivity.internalStorage.fileExists()) {
+            LunsjActivity.internalStorage.writeToFile(MenuJsonEncoder.jsonWeekMenuFormatter());
+        }
+        return LunsjActivity.internalStorage.readFromFile();
     }
 }
