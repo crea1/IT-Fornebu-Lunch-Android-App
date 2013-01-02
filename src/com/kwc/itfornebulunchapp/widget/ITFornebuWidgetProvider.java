@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
+import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.R;
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.service.WeekMenuService;
@@ -50,12 +51,13 @@ public class ITFornebuWidgetProvider extends AppWidgetProvider {
     }
 
     private void setupOnClickListener(Context context, int[] appWidgetIds, RemoteViews remoteViews) {
-        Intent intent = new Intent(context, ITFornebuWidgetProvider.class);
 
+        // The onclick should load the main activity
+        Intent intent = new Intent(context, LunsjActivity.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
 
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
         remoteViews.setOnClickPendingIntent(R.id.update, pendingIntent);
     }
