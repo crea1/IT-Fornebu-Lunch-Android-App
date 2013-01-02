@@ -1,4 +1,4 @@
-package com.kwc.itfornebulunchapp.handlers;
+package com.kwc.itfornebulunchapp.controllers;
 
 import com.kwc.itfornebulunchapp.utils.AlertBox;
 

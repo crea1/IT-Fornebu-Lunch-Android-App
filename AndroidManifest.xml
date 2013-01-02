@@ -21,7 +21,7 @@
 
         <!-- Widget -->
         <receiver
-                android:name=".widget.ITFornebuWidgetProvider"
+                android:name=".view.widget.ITFornebuWidgetProvider"
                 android:label="IT Fornebu Lunsj Widget"
                 android:icon="@drawable/icon">
             <intent-filter>

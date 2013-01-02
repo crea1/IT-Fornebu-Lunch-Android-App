@@ -1,4 +1,4 @@
-package com.kwc.itfornebulunchapp.widget;
+package com.kwc.itfornebulunchapp.view.widget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -12,8 +12,6 @@ import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.R;
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.service.WeekMenuService;
-
-import java.util.Random;
 
 /**
  * This class handles the widget.

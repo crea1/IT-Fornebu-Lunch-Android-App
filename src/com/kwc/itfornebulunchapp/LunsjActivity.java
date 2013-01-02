@@ -11,8 +11,8 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import com.kwc.itfornebulunchapp.handlers.InternalStorage;
-import com.kwc.itfornebulunchapp.jsaccessors.JSInterface;
+import com.kwc.itfornebulunchapp.controllers.InternalStorage;
+import com.kwc.itfornebulunchapp.view.javascriptInterface.JSInterface;
 import com.kwc.itfornebulunchapp.utils.AlertBox;
 
 /**

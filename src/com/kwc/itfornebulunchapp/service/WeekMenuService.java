@@ -1,7 +1,7 @@
 package com.kwc.itfornebulunchapp.service;
 
-import com.kwc.itfornebulunchapp.handlers.DataFetcher;
-import com.kwc.itfornebulunchapp.handlers.DataSorter;
+import com.kwc.itfornebulunchapp.controllers.DataFetcher;
+import com.kwc.itfornebulunchapp.controllers.DataSorter;
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
 
@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
+ * This is a service class providing data to views.
+ *
  * @author Marius Kristensen
  * @since 1.3
  */
@@ -60,7 +62,6 @@ public class WeekMenuService {
                     dish = new DayMenu("Søndag", "Kantinen er stengt i dag.", Calendar.SUNDAY);
                     break;
                 default:
-                    dish = new DayMenu("Error", "Henting av lunsjmeny feilet.", day);
             }
         }
         return dish;

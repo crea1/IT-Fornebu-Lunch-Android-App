@@ -1,4 +1,4 @@
-package com.kwc.itfornebulunchapp.handlers;
+package com.kwc.itfornebulunchapp.controllers;
 
 import com.kwc.itfornebulunchapp.model.WeekMenu;
 import com.kwc.itfornebulunchapp.service.WeekMenuService;

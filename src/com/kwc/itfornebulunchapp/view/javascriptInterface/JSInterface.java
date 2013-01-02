@@ -1,9 +1,9 @@
-package com.kwc.itfornebulunchapp.jsaccessors;
+package com.kwc.itfornebulunchapp.view.javascriptInterface;
 
 import android.webkit.WebView;
 import com.kwc.itfornebulunchapp.LunsjActivity;
-import com.kwc.itfornebulunchapp.handlers.DateHandler;
-import com.kwc.itfornebulunchapp.handlers.MenuJsonEncoder;
+import com.kwc.itfornebulunchapp.controllers.DateHandler;
+import com.kwc.itfornebulunchapp.controllers.MenuJsonEncoder;
 
 /**
  * JSInteface.
