@@ -1,9 +1,10 @@
 package com.kwc.itfornebulunchapp.service;
 
+import android.util.Log;
 import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.controllers.DataFetcher;
 import com.kwc.itfornebulunchapp.controllers.DataSorter;
-import com.kwc.itfornebulunchapp.controllers.MenuJsonEncoder;
+import com.kwc.itfornebulunchapp.controllers.JSONParser;
 import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.model.WeekMenu;
 
@@ -17,6 +18,9 @@ import java.util.GregorianCalendar;
  * @since 1.3
  */
 public class WeekMenuService {
+
+    private static final String LOGTAG = "ITFornebuLunchApp";
+
     /**
      * This method reads the HTML from the Lunch page at itfornebu.no
      * and searches for the menu using a regexp. It then sorts the
@@ -70,9 +74,20 @@ public class WeekMenuService {
     }
 
     public String getWeekMenuJsonString() {
+        JSONParser parser = new JSONParser();
         if (!LunsjActivity.internalStorage.fileExists()) {
-            LunsjActivity.internalStorage.writeToFile(MenuJsonEncoder.jsonWeekMenuFormatter());
+            LunsjActivity.internalStorage.writeToFile(parser.weekMenuToJSON(getWeekMenu()));
         }
         return LunsjActivity.internalStorage.readFromFile();
+    }
+
+    public boolean isTheMenuOld() {
+        JSONParser parser = new JSONParser();
+        WeekMenu savedMenu = parser.parseJSONToWeekMenu(LunsjActivity.internalStorage.readFromFile());
+        WeekMenu newMenu = getWeekMenu();
+
+        Log.d(LOGTAG, "Saved timestamp: " + savedMenu.getTimestamp() + " | New timestamp: " + newMenu.getTimestamp());
+
+        return true;
     }
 }

@@ -1,9 +1,7 @@
 package com.kwc.itfornebulunchapp.view.javascriptInterface;
 
 import android.webkit.WebView;
-import com.kwc.itfornebulunchapp.LunsjActivity;
 import com.kwc.itfornebulunchapp.controllers.DateHandler;
-import com.kwc.itfornebulunchapp.controllers.MenuJsonEncoder;
 import com.kwc.itfornebulunchapp.service.WeekMenuService;
 
 /**

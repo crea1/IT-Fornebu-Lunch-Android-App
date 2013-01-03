@@ -79,4 +79,7 @@ public class WeekMenu {
         return timestamp;
     }
 
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 }
