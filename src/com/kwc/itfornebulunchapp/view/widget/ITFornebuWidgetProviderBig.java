@@ -33,7 +33,7 @@ public class ITFornebuWidgetProviderBig extends AppWidgetProvider {
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_big_layout);
 
             WeekMenuService weekMenuService = new WeekMenuService();
-            remoteViews.setImageViewResource(R.id.updateWidgetButton, R.drawable.ic_menu_refresh_on);
+            remoteViews.setImageViewResource(R.id.updateWidgetButton, R.drawable.ic_menu_block);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
             DayMenu todaysMenu = weekMenuService.getTodaysDish();
             String updatedDish = todaysMenu.getDish();
