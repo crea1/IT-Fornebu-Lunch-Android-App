@@ -31,7 +31,6 @@
     </LinearLayout>
 
     <ImageButton android:id="@+id/updateWidgetButton"
-              android:text="Knapp"
               android:src="@drawable/ic_menu_refresh"
               android:textColor="#fff"
               android:background="@drawable/widget_shape"
@@ -39,6 +38,7 @@
               android:layout_width="wrap_content"
               android:layout_margin="4dp"
               android:gravity="center"
+              android:contentDescription="@string/oppdater"
             />
 
 

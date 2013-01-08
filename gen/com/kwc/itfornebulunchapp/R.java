@@ -36,6 +36,7 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int menu_about=0x7f050001;
         public static final int menu_refresh=0x7f050002;
+        public static final int oppdater=0x7f050003;
     }
     public static final class xml {
         public static final int itfornebu_widget_big_info=0x7f040000;

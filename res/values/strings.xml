@@ -3,4 +3,5 @@
     <string name="app_name">IT Fornebu Lunsjmeny</string>
     <string name="menu_about">Om</string>
     <string name="menu_refresh">Oppdater</string>
+    <string name="oppdater">Oppdater</string>
 </resources>
