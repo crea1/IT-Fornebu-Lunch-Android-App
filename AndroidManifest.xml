@@ -19,16 +19,24 @@
             </intent-filter>
         </activity>
 
-        <!-- Widget -->
+        <!-- Widgets -->
         <receiver
-                android:name=".view.widget.ITFornebuWidgetProvider"
+                android:name="com.kwc.itfornebulunchapp.view.widget.ITFornebuWidgetProvider"
                 android:label="IT Fornebu Lunsj Widget"
                 android:icon="@drawable/icon">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider"
-                       android:resource="@xml/itfornebu_widget_info" />
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/itfornebu_widget_info" />
+        </receiver>
+        <receiver
+                android:name="com.kwc.itfornebulunchapp.view.widget.ITFornebuWidgetProviderBig"
+                android:label="IT Fornebu Lunsj Widget"
+                android:icon="@drawable/icon">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/itfornebu_widget_big_info" />
         </receiver>
 
     </application>

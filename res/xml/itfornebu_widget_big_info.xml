@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- 2x1 widget -->
+<!-- 4x1 widget -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:minWidth="110dp"
+                    android:minWidth="294dp"
                     android:minHeight="72dp"
                     android:updatePeriodMillis="10800000"
-                    android:initialLayout="@layout/widget_layout">
+                    android:initialLayout="@layout/widget_big_layout">
 </appwidget-provider>
-
-<!-- 10800000 = 3 hours -->
