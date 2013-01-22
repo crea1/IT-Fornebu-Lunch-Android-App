@@ -57,6 +57,6 @@ public class ITFornebuWidgetProvider extends AppWidgetProvider {
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
-        remoteViews.setOnClickPendingIntent(R.id.update, pendingIntent);
+        remoteViews.setOnClickPendingIntent(R.id.smallWidgetLayout, pendingIntent);
     }
 }
