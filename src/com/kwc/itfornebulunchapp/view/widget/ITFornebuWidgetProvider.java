@@ -14,7 +14,7 @@ import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.service.WeekMenuService;
 
 /**
- * This class handles the widget.
+ * This class handles the 2x1 widget.
  *
  * @author Marius Kristensen
  * @since 1.3
@@ -35,7 +35,7 @@ public class ITFornebuWidgetProvider extends AppWidgetProvider {
 
             RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 
-            Log.d(LOGTAG, "updating widget with text: " + updatedDish);
+            Log.d(LOGTAG, "updating widget(2x1) with text: " + updatedDish);
             //Update widget text
             remoteViews.setTextViewText(R.id.update, todaysMenu.getDish());
             remoteViews.setTextViewText(R.id.day, todaysMenu.getWeekday());

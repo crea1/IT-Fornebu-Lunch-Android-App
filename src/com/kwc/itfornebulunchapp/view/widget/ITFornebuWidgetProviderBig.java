@@ -15,7 +15,7 @@ import com.kwc.itfornebulunchapp.model.DayMenu;
 import com.kwc.itfornebulunchapp.service.WeekMenuService;
 
 /**
- * This class handles the big widget.
+ * This class handles the big 4x1 widget.
  *
  * @author Marius Kristensen
  * @since 1.3
@@ -39,7 +39,7 @@ public class ITFornebuWidgetProviderBig extends AppWidgetProvider {
             String updatedDish = todaysMenu.getDish();
 
 
-            Log.d(LOGTAG, "updating big widget with text: " + updatedDish);
+            Log.d(LOGTAG, "updating widget(4x1) with text: " + updatedDish);
             //Update widget text
             remoteViews.setTextViewText(R.id.update, todaysMenu.getDish());
             remoteViews.setTextViewText(R.id.day, todaysMenu.getWeekday());
