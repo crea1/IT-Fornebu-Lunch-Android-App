@@ -14,17 +14,17 @@
               android:layout_height="wrap_content"
               android:text=""
               android:textColor="#33B5E5"
-              android:gravity="center">
-    </TextView>
+              android:gravity="center"
+            />
     <TextView android:id="@+id/update"
               style="@android:style/TextAppearance.Widget"
               android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
+              android:layout_height="fill_parent"
               android:text=""
               android:layout_marginBottom="2dp"
               android:layout_marginLeft="2dp"
               android:layout_marginRight="2dp"
               android:textColor="#FFFFFF"
-              android:gravity="center">
-              </TextView>
+              android:gravity="center"
+            />
 </LinearLayout>
