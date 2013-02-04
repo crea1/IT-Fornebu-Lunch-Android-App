@@ -8,13 +8,13 @@ body 				{ color: #ffffff; background-color: #000; height: 98%; margin: 0; posit
 #header 			{ text-align: center; margin: 5px 5px 10px; color: #ffffff; font: 1.4em 'RobotoThin'; border-bottom: 1px solid #33B5E5; }
 #menu 				{ height: 100%; margin: 0 5px 0 5px;}
 .information 		{ text-align: center; margin:40px; font-size: 0.8em; }
-.container 			{ position:relative; height: 75px; width: 100%; }
-.day 				{ color: #33B5E5; width: 30px; font: 3.5em 'RobotoThin'; position: absolute; bottom: -10px; }
-.dish 			    { font: 1.0em 'Arial'; color: #ffffff; float: left; position: absolute; bottom: 0; left: 50px; }
+.day                { color: #33B5E5; float: left; font: 3.5em 'RobotoThin'; height: 100%; text-align: center; min-width: 50px; width: 15%; }
+.dish               { color: #FFFFFF; font: 1em 'Arial'; float: right; width: 84%; }
+.container          { min-height: 75px; width: 100%; margin-top: 6px; overflow: auto; }
 .today 				{ border-bottom: 1px solid #33B5E5; }
 #controls 			{ text-align: center; margin-top: 40px;}
 .hidden 			{ display: none; visibility: hidden; }
-#timestamp 			{ position:absolute; bottom:5px; font-size: 0.8em; color: #505050; }
+#timestamp 			{ font-size: 0.8em; color: #505050; }
 #about              { font: 1.0em 'Arial'; color: #ffffff; text-align: center; margin-top: 15px; }
 
 
@@ -24,5 +24,4 @@ body 				{ color: #ffffff; background-color: #000; height: 98%; margin: 0; posit
     url('Roboto-Thin-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
