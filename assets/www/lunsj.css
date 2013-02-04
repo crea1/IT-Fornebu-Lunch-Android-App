@@ -16,6 +16,9 @@ body 				{ color: #ffffff; background-color: #000; height: 98%; margin: 0; posit
 .hidden 			{ display: none; visibility: hidden; }
 #timestamp 			{ font-size: 0.8em; color: #505050; }
 #about              { font: 1.0em 'Arial'; color: #ffffff; text-align: center; margin-top: 15px; }
+#burger             { background-image:url('icon.png'); width: 72px; height: 72px; margin: auto; }
+a:visited           { color: #0000ff;}
+
 
 
 @font-face {
@@ -24,4 +27,107 @@ body 				{ color: #ffffff; background-color: #000; height: 98%; margin: 0; posit
     url('Roboto-Thin-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+
+
+/* ANIMATION */
+
+.animated {
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.animated.hinge {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -ms-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes wobble {
+  0% { -webkit-transform: translateX(0%); }
+  15% { -webkit-transform: translateX(-25%) rotate(-5deg); }
+  30% { -webkit-transform: translateX(20%) rotate(3deg); }
+  45% { -webkit-transform: translateX(-15%) rotate(-3deg); }
+  60% { -webkit-transform: translateX(10%) rotate(2deg); }
+  75% { -webkit-transform: translateX(-5%) rotate(-1deg); }
+  100% { -webkit-transform: translateX(0%); }
+}
+
+@-moz-keyframes wobble {
+  0% { -moz-transform: translateX(0%); }
+  15% { -moz-transform: translateX(-25%) rotate(-5deg); }
+  30% { -moz-transform: translateX(20%) rotate(3deg); }
+  45% { -moz-transform: translateX(-15%) rotate(-3deg); }
+  60% { -moz-transform: translateX(10%) rotate(2deg); }
+  75% { -moz-transform: translateX(-5%) rotate(-1deg); }
+  100% { -moz-transform: translateX(0%); }
+}
+
+@-o-keyframes wobble {
+  0% { -o-transform: translateX(0%); }
+  15% { -o-transform: translateX(-25%) rotate(-5deg); }
+  30% { -o-transform: translateX(20%) rotate(3deg); }
+  45% { -o-transform: translateX(-15%) rotate(-3deg); }
+  60% { -o-transform: translateX(10%) rotate(2deg); }
+  75% { -o-transform: translateX(-5%) rotate(-1deg); }
+  100% { -o-transform: translateX(0%); }
+}
+
+@keyframes wobble {
+  0% { transform: translateX(0%); }
+  15% { transform: translateX(-25%) rotate(-5deg); }
+  30% { transform: translateX(20%) rotate(3deg); }
+  45% { transform: translateX(-15%) rotate(-3deg); }
+  60% { transform: translateX(10%) rotate(2deg); }
+  75% { transform: translateX(-5%) rotate(-1deg); }
+  100% { transform: translateX(0%); }
+}
+
+.wobble {
+    -webkit-animation-name: wobble;
+    -moz-animation-name: wobble;
+    -o-animation-name: wobble;
+    animation-name: wobble;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+	50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@-moz-keyframes pulse {
+    0% { -moz-transform: scale(1); }
+	50% { -moz-transform: scale(1.1); }
+    100% { -moz-transform: scale(1); }
+}
+@-o-keyframes pulse {
+    0% { -o-transform: scale(1); }
+	50% { -o-transform: scale(1.1); }
+    100% { -o-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+	50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -o-animation-name: pulse;
+    animation-name: pulse;
 }

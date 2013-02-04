@@ -4,8 +4,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>About</title>
     <link href="lunsj.css" rel="stylesheet" type="text/css" />
+    <script src="jquery-1.7.2.min.js"></script>
 </head>
 <body>
+<script>
+    $(document).ready(function(){
+        $('#burger').addClass("animated wobble");
+    });
+</script>
 
 <div id="header">Om</div>
 <div class="body">
@@ -15,9 +21,10 @@
             Marius Haugli Kristensen<br />
         </p>
         <p>KWC</p>
-        <p>2012</p>
-        <img src="icon.png" />
+        <div id="burger">
+        </div>
         <p>Kantinenes åpningstider:<br />10:30 - 13:30</p>
+        <a href="http://leietaker.itfornebu.no/itfornebu/kantinemeny">Kantinen på nett</a>
     </div>
 </div>
 </body>
