@@ -54,13 +54,13 @@ public class ITFornebuWidgetProvider extends AppWidgetProvider {
     private void setupOnClickListener(Context context, int[] appWidgetIds, RemoteViews remoteViews) {
 
         // The onclick should load the main activity
-        //Intent intent = new Intent(context, LunsjActivity.class);
-        Intent intent = new Intent(context, ITFornebuWidgetProvider.class);
+        Intent intent = new Intent(context, LunsjActivity.class);
+        //Intent intent = new Intent(context, ITFornebuWidgetProvider.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
 
-        //PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+        //PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         remoteViews.setOnClickPendingIntent(R.id.smallWidgetLayout, pendingIntent);
     }
