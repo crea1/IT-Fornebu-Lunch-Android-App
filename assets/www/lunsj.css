@@ -10,7 +10,7 @@ body 				{ color: #ffffff; background-color: #000; height: 98%; margin: 0; posit
 .information 		{ text-align: center; margin:40px; font-size: 0.8em; }
 .day                { color: #33B5E5; float: left; font: 3.5em 'RobotoThin'; height: 100%; text-align: center; min-width: 50px; width: 15%; }
 .dish               { color: #FFFFFF; font: 1em 'Arial'; float: right; width: 84%; }
-.container          { min-height: 75px; width: 100%; margin-top: 6px; overflow: auto; }
+.container          { min-height: 75px; width: 100%; margin-top: 8px; overflow: auto; }
 .today 				{ border-bottom: 1px solid #33B5E5; }
 #controls 			{ text-align: center; margin-top: 40px;}
 .hidden 			{ display: none; visibility: hidden; }
@@ -53,8 +53,6 @@ a:visited           { color: #0000ff;}
     -o-animation-duration: 2s;
     animation-duration: 2s;
 }
-
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 @-webkit-keyframes wobble {
   0% { -webkit-transform: translateX(0%); }
@@ -102,7 +100,6 @@ a:visited           { color: #0000ff;}
     -o-animation-name: wobble;
     animation-name: wobble;
 }
-/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 @-webkit-keyframes pulse {
     0% { -webkit-transform: scale(1); }
