@@ -1,5 +1,7 @@
 package com.kwc.itfornebulunchapp.model;
 
+import android.text.Html;
+
 /**
  * DayMenu is an object holding the dish
  * for a single day.
@@ -56,5 +58,9 @@ public class DayMenu {
 
     public final void setDish(final String dish) {
         this.dish = dish;
+    }
+
+    public final String getDishWithoutHTML() {
+        return Html.fromHtml(dish).toString();
     }
 }

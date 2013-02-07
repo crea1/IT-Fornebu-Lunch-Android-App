@@ -35,12 +35,12 @@ public class ITFornebuWidgetProvider extends AppWidgetProvider {
 
             WeekMenuService weekMenuService = new WeekMenuService();
             DayMenu todaysMenu = weekMenuService.getTodaysDish();
-            String updatedDish = todaysMenu.getDish();
+            String updatedDish = todaysMenu.getDishWithoutHTML();
 
 
             Log.d(LOGTAG, "updating widget(2x1) with text: " + updatedDish);
             //Update widget text
-            remoteViews.setTextViewText(R.id.update, todaysMenu.getDish());
+            remoteViews.setTextViewText(R.id.update, updatedDish);
             remoteViews.setTextViewText(R.id.day, todaysMenu.getWeekday());
 
             // OnClickListener

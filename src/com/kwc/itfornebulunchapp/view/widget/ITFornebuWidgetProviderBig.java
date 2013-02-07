@@ -36,12 +36,12 @@ public class ITFornebuWidgetProviderBig extends AppWidgetProvider {
             remoteViews.setImageViewResource(R.id.updateWidgetButton, R.drawable.ic_menu_block);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
             DayMenu todaysMenu = weekMenuService.getTodaysDish();
-            String updatedDish = todaysMenu.getDish();
+            String updatedDish = todaysMenu.getDishWithoutHTML();
 
 
             Log.d(LOGTAG, "updating widget(4x1) with text: " + updatedDish);
             //Update widget text
-            remoteViews.setTextViewText(R.id.update, todaysMenu.getDish());
+            remoteViews.setTextViewText(R.id.update, updatedDish);
             remoteViews.setTextViewText(R.id.day, todaysMenu.getWeekday());
             remoteViews.setImageViewResource(R.id.updateWidgetButton, R.drawable.ic_menu_refresh);
 
