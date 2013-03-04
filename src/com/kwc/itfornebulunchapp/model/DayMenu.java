@@ -61,6 +61,10 @@ public class DayMenu {
     }
 
     public final String getDishWithoutHTML() {
-        return Html.fromHtml(dish).toString();
+        String menu = "";
+        if (dish != null) {
+            menu = Html.fromHtml(dish).toString();
+        }
+        return menu;
     }
 }
